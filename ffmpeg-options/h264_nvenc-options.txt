@@ -1,0 +1,54 @@
+h264_nvenc AVOptions:
+  -preset            <int>        E..V....... Set the encoding preset (from 0 to 18) (default p4)
+     default         0            E..V.......
+     slow            1            E..V....... hq 2 passes
+     medium          2            E..V....... hq 1 pass
+     fast            3            E..V....... hp 1 pass
+     hp              4            E..V.......
+     hq              5            E..V.......
+     bd              6            E..V.......
+     ll              7            E..V....... low latency
+     llhq            8            E..V....... low latency hq
+     llhp            9            E..V....... low latency hp
+     lossless        10           E..V.......
+     losslesshp      11           E..V.......
+     p1              12           E..V....... fastest (lowest quality)
+     p2              13           E..V....... faster (lower quality)
+     p3              14           E..V....... fast (low quality)
+     p4              15           E..V....... medium (default)
+     p5              16           E..V....... slow (good quality)
+     p6              17           E..V....... slower (better quality)
+     p7              18           E..V....... slowest (best quality)
+  -profile           <int>        E..V....... Set the encoding profile (from 0 to 3) (default main)
+     baseline        0            E..V.......
+     main            1            E..V.......
+     high            2            E..V.......
+     high444p        3            E..V.......
+  -rc                <int>        E..V....... Override the preset rate-control (from -1 to INT_MAX) (default -1)
+     constqp         0            E..V....... Constant QP mode
+     vbr             1            E..V....... Variable bitrate mode
+     cbr             2            E..V....... Constant bitrate mode
+     vbr_minqp       8388609      E..V....... Variable bitrate mode with MinQP (deprecated)
+     ll_2pass_quality 8388609      E..V....... Multi-pass optimized for image quality (deprecated)
+     ll_2pass_size   8388610      E..V....... Multi-pass optimized for constant frame size (deprecated)
+     vbr_2pass       8388609      E..V....... Multi-pass variable bitrate mode (deprecated)
+     cbr_ld_hq       8388610      E..V....... Constant bitrate low delay high quality mode
+     cbr_hq          8388610      E..V....... Constant bitrate high quality mode
+     vbr_hq          8388609      E..V....... Variable bitrate high quality mode
+  -cbr               <boolean>    E..V....... Use cbr encoding mode (default false)
+  -2pass             <boolean>    E..V....... Use 2pass encoding mode (default auto)
+  -gpu               <int>        E..V....... Selects which NVENC capable GPU to use. First GPU is 0, second is 1, and so on. (from -2 to INT_MAX) (default any)
+     any             -1           E..V....... Pick the first device available
+     list            -2           E..V....... List the available devices
+  -rgb_mode          <int>        E..V....... Configure how nvenc handles packed RGB input. (from 0 to INT_MAX) (default yuv420)
+     yuv420          1            E..V....... Convert to yuv420
+     yuv444          2            E..V....... Convert to yuv444
+     disabled        0            E..V....... Disables support, throws an error.
+  -cq                <float>      E..V....... Set target quality level (0 to 51, 0 means automatic) for constant quality mode in VBR rate control (from 0 to 51) (default 0)
+  -qp                <int>        E..V....... Constant quantization parameter rate control method (from -1 to 51) (default -1)
+  -qp_cb_offset      <int>        E..V....... Quantization parameter offset for cb channel (from -12 to 12) (default 0)
+  -qp_cr_offset      <int>        E..V....... Quantization parameter offset for cr channel (from -12 to 12) (default 0)
+  -multipass         <int>        E..V....... Set the multipass encoding (from 0 to 2) (default disabled)
+     disabled        0            E..V....... Single Pass
+     qres            1            E..V....... Two Pass encoding is enabled where first Pass is quarter resolution
+     fullres         2            E..V....... Two Pass encoding is enabled where first Pass is full resolution

@@ -1,0 +1,270 @@
+# ffmpeg jobs
+# "?input?" replaces to input file path in code
+
+###
+
+# vp9_qsv
+-hwaccel qsv -i ?input? -c:v vp9_qsv vp9_qsv_default.mp4
+
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset faster -global_quality 10 vp9_qsv_faster_10.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset faster -global_quality 18 vp9_qsv_faster_18.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset faster -global_quality 20 vp9_qsv_faster_20.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset faster -global_quality 28 vp9_qsv_faster_28.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset faster -global_quality 35 vp9_qsv_faster_35.mp4
+
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset medium -global_quality 10 vp9_qsv_medium_10.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset medium -global_quality 18 vp9_qsv_medium_18.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset medium -global_quality 20 vp9_qsv_medium_20.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset medium -global_quality 28 vp9_qsv_medium_28.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset medium -global_quality 35 vp9_qsv_medium_35.mp4
+
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset slower -global_quality 10 vp9_qsv_slower_10.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset slower -global_quality 18 vp9_qsv_slower_18.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset slower -global_quality 20 vp9_qsv_slower_20.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset slower -global_quality 28 vp9_qsv_slower_28.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset slower -global_quality 35 vp9_qsv_slower_35.mp4
+
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset veryslow -global_quality 10 vp9_qsv_veryslow_10.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset veryslow -global_quality 18 vp9_qsv_veryslow_18.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset veryslow -global_quality 20 vp9_qsv_veryslow_20.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset veryslow -global_quality 28 vp9_qsv_veryslow_28.mp4
+-hwaccel qsv -i ?input? -c:v vp9_qsv -preset veryslow -global_quality 35 vp9_qsv_veryslow_35.mp4
+
+
+# libsvtav1
+-i ?input? -c:v libsvtav1 libsvtav1_default.mp4
+
+-i ?input? -c:v libsvtav1 -preset 8 -crf 18 libsvtav1_8_crf18.mp4
+-i ?input? -c:v libsvtav1 -preset 8 -crf 20 libsvtav1_8_crf20.mp4
+-i ?input? -c:v libsvtav1 -preset 8 -crf 28 libsvtav1_8_crf28.mp4
+-i ?input? -c:v libsvtav1 -preset 8 -crf 35 libsvtav1_8_crf35.mp4
+
+-i ?input? -c:v libsvtav1 -preset 5 -crf 18 libsvtav1_5_crf18.mp4
+-i ?input? -c:v libsvtav1 -preset 5 -crf 20 libsvtav1_5_crf20.mp4
+-i ?input? -c:v libsvtav1 -preset 5 -crf 28 libsvtav1_5_crf28.mp4
+-i ?input? -c:v libsvtav1 -preset 5 -crf 35 libsvtav1_5_crf35.mp4
+
+-i ?input? -c:v libsvtav1 -preset 12 -crf 18 libsvtav1_12_crf18.mp4
+-i ?input? -c:v libsvtav1 -preset 12 -crf 20 libsvtav1_12_crf20.mp4
+-i ?input? -c:v libsvtav1 -preset 12 -crf 28 libsvtav1_12_crf28.mp4
+-i ?input? -c:v libsvtav1 -preset 12 -crf 35 libsvtav1_12_crf35.mp4
+
+-i ?input? -c:v libsvtav1 -preset 4 -crf 18 libsvtav1_4_crf18.mp4
+-i ?input? -c:v libsvtav1 -preset 4 -crf 20 libsvtav1_4_crf20.mp4
+-i ?input? -c:v libsvtav1 -preset 4 -crf 28 libsvtav1_4_crf28.mp4
+-i ?input? -c:v libsvtav1 -preset 4 -crf 35 libsvtav1_4_crf35.mp4
+
+
+# av1_nvenc
+-i ?input? -c:v av1_nvenc av1_nvenc_default.mp4
+
+-i ?input? -c:v av1_nvenc -preset p6 av1_nvenc_p6.mp4
+-i ?input? -c:v av1_nvenc -preset p7 av1_nvenc_p7.mp4
+
+-i ?input? -c:v av1_nvenc -cq 18 av1_nvenc_cq18.mp4
+-i ?input? -c:v av1_nvenc -cq 20 av1_nvenc_cq20.mp4
+-i ?input? -c:v av1_nvenc -cq 28 av1_nvenc_cq28.mp4
+-i ?input? -c:v av1_nvenc -cq 35 av1_nvenc_cq35.mp4
+
+-i ?input? -c:v av1_nvenc -preset p6 -cq 18 av1_nvenc_p6_cq18.mp4
+-i ?input? -c:v av1_nvenc -preset p6 -cq 20 av1_nvenc_p6_cq20.mp4
+-i ?input? -c:v av1_nvenc -preset p6 -cq 28 av1_nvenc_p6_cq28.mp4
+-i ?input? -c:v av1_nvenc -preset p6 -cq 35 av1_nvenc_p6_cq35.mp4
+
+-i ?input? -c:v av1_nvenc -preset p7 -cq 18 av1_nvenc_p7_cq18.mp4
+-i ?input? -c:v av1_nvenc -preset p7 -cq 20 av1_nvenc_p7_cq20.mp4
+-i ?input? -c:v av1_nvenc -preset p7 -cq 28 av1_nvenc_p7_cq28.mp4
+-i ?input? -c:v av1_nvenc -preset p7 -cq 35 av1_nvenc_p7_cq35.mp4
+
+-i ?input? -c:v av1_nvenc -preset p2 -cq 18 av1_nvenc_p2_cq18.mp4
+-i ?input? -c:v av1_nvenc -preset p2 -cq 20 av1_nvenc_p2_cq20.mp4
+-i ?input? -c:v av1_nvenc -preset p2 -cq 28 av1_nvenc_p2_cq28.mp4
+-i ?input? -c:v av1_nvenc -preset p2 -cq 35 av1_nvenc_p2_cq35.mp4
+
+
+# av1_qsv
+-hwaccel qsv -i ?input? -c:v av1_qsv av1_qsv_default.mp4
+
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset faster -global_quality 18 av1_qsv_faster_18.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset faster -global_quality 20 av1_qsv_faster_20.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset faster -global_quality 28 av1_qsv_faster_28.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset faster -global_quality 35 av1_qsv_faster_35.mp4
+
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset medium -global_quality 18 av1_qsv_medium_18.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset medium -global_quality 20 av1_qsv_medium_20.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset medium -global_quality 28 av1_qsv_medium_28.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset medium -global_quality 35 av1_qsv_medium_35.mp4
+
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset slower -global_quality 18 av1_qsv_slower_18.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset slower -global_quality 20 av1_qsv_slower_20.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset slower -global_quality 28 av1_qsv_slower_28.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset slower -global_quality 35 av1_qsv_slower_35.mp4
+
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset veryslow -global_quality 18 av1_qsv_veryslow_18.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset veryslow -global_quality 20 av1_qsv_veryslow_20.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset veryslow -global_quality 28 av1_qsv_veryslow_28.mp4
+-hwaccel qsv -i ?input? -c:v av1_qsv -preset veryslow -global_quality 35 av1_qsv_veryslow_35.mp4
+
+
+
+# hevc_nvenc
+-i ?input? -c:v hevc_nvenc hevc_nvenc_default.mp4
+
+-i ?input? -c:v hevc_nvenc -preset p6 hevc_nvenc_p6.mp4
+-i ?input? -c:v hevc_nvenc -preset p7 hevc_nvenc_p7.mp4
+
+-i ?input? -c:v hevc_nvenc -cq 23 hevc_nvenc_cq23.mp4
+-i ?input? -c:v hevc_nvenc -cq 24 hevc_nvenc_cq24.mp4
+-i ?input? -c:v hevc_nvenc -cq 28 hevc_nvenc_cq28.mp4
+-i ?input? -c:v hevc_nvenc -cq 32 hevc_nvenc_cq32.mp4
+
+-i ?input? -c:v hevc_nvenc -preset p6 -cq 23 hevc_nvenc_p6_cq23.mp4
+-i ?input? -c:v hevc_nvenc -preset p6 -cq 24 hevc_nvenc_p6_cq24.mp4
+-i ?input? -c:v hevc_nvenc -preset p6 -cq 28 hevc_nvenc_p6_cq28.mp4
+-i ?input? -c:v hevc_nvenc -preset p6 -cq 32 hevc_nvenc_p6_cq32.mp4
+
+-i ?input? -c:v hevc_nvenc -preset p7 -cq 23 hevc_nvenc_p7_cq23.mp4
+-i ?input? -c:v hevc_nvenc -preset p7 -cq 24 hevc_nvenc_p7_cq24.mp4
+-i ?input? -c:v hevc_nvenc -preset p7 -cq 28 hevc_nvenc_p7_cq28.mp4
+-i ?input? -c:v hevc_nvenc -preset p7 -cq 32 hevc_nvenc_p7_cq32.mp4
+
+-i ?input? -c:v hevc_nvenc -preset p2 -cq 23 hevc_nvenc_p2_cq23.mp4
+-i ?input? -c:v hevc_nvenc -preset p2 -cq 24 hevc_nvenc_p2_cq24.mp4
+-i ?input? -c:v hevc_nvenc -preset p2 -cq 28 hevc_nvenc_p2_cq28.mp4
+-i ?input? -c:v hevc_nvenc -preset p2 -cq 32 hevc_nvenc_p2_cq32.mp4
+
+
+# libx265
+-i ?input? -c:v libx265 libx265_default.mp4
+
+-i ?input? -c:v libx265 -preset medium -crf 24 libx265_medium_crf24.mp4
+-i ?input? -c:v libx265 -preset medium -crf 28 libx265_medium_crf28.mp4
+-i ?input? -c:v libx265 -preset medium -crf 32 libx265_medium_crf32.mp4
+
+-i ?input? -c:v libx265 -preset slow -crf 24 libx265_slow_crf24.mp4
+-i ?input? -c:v libx265 -preset slow -crf 28 libx265_slow_crf28.mp4
+-i ?input? -c:v libx265 -preset slow -crf 32 libx265_slow_crf32.mp4
+
+-i ?input? -c:v libx265 -preset faster -crf 24 libx265_faster_crf24.mp4
+-i ?input? -c:v libx265 -preset faster -crf 28 libx265_faster_crf28.mp4
+-i ?input? -c:v libx265 -preset faster -crf 32 libx265_faster_crf32.mp4
+
+-i ?input? -c:v libx265 -preset superfast -crf 24 libx265_superfast_crf24.mp4
+-i ?input? -c:v libx265 -preset superfast -crf 28 libx265_superfast_crf28.mp4
+-i ?input? -c:v libx265 -preset superfast -crf 32 libx265_superfast_crf32.mp4
+
+-i ?input? -c:v libx265 -preset ultrafast -x265-params lossless=1 libx265_ultrafast_lossless.mp4
+# slow /slower presets are terribly slow(~2fps)
+-i ?input? -c:v libx265 -preset veryslow  -x265-params lossless=1 libx265_veryslow_lossless.mp4
+
+
+# hevc_qsv
+-hwaccel qsv -i ?input? -c:v hevc_qsv hevc_qsv_default.mp4
+
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset faster -global_quality 23 hevc_qsv_faster_23.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset faster -global_quality 24 hevc_qsv_faster_24.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset faster -global_quality 28 hevc_qsv_faster_28.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset faster -global_quality 32 hevc_qsv_faster_32.mp4
+
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset medium -global_quality 23 hevc_qsv_medium_23.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset medium -global_quality 24 hevc_qsv_medium_24.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset medium -global_quality 28 hevc_qsv_medium_28.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset medium -global_quality 32 hevc_qsv_medium_32.mp4
+
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset slower -global_quality 23 hevc_qsv_slower_23.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset slower -global_quality 24 hevc_qsv_slower_24.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset slower -global_quality 28 hevc_qsv_slower_28.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset slower -global_quality 32 hevc_qsv_slower_32.mp4
+
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset veryslow -global_quality 23 hevc_qsv_veryslow_23.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset veryslow -global_quality 24 hevc_qsv_veryslow_24.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset veryslow -global_quality 28 hevc_qsv_veryslow_28.mp4
+-hwaccel qsv -i ?input? -c:v hevc_qsv -preset veryslow -global_quality 32 hevc_qsv_veryslow_32.mp4
+
+
+
+# h264_nvenc
+-i ?input? -c:v h264_nvenc h264_nvenc_default.mp4
+-i ?input? -c:v h264_nvenc -qp 15 -profile:v high444p -pix_fmt yuv444p -tune hq -preset p7 -rc constqp -rc-lookahead 32 h264_nvenc_HighestQuality.mp4
+
+-i ?input? -c:v h264_nvenc -preset p6 h264_nvenc_p6.mp4
+-i ?input? -c:v h264_nvenc -preset p7 h264_nvenc_p7.mp4
+
+
+-i ?input? -c:v h264_nvenc -cq 17 h264_nvenc_cq17.mp4
+-i ?input? -c:v h264_nvenc -cq 18 h264_nvenc_cq18.mp4
+-i ?input? -c:v h264_nvenc -cq 23 h264_nvenc_cq23.mp4
+-i ?input? -c:v h264_nvenc -cq 28 h264_nvenc_cq28.mp4
+
+-i ?input? -c:v h264_nvenc -preset p6 -cq 17 h264_nvenc_p6_cq17.mp4
+-i ?input? -c:v h264_nvenc -preset p6 -cq 18 h264_nvenc_p6_cq18.mp4
+-i ?input? -c:v h264_nvenc -preset p6 -cq 23 h264_nvenc_p6_cq23.mp4
+-i ?input? -c:v h264_nvenc -preset p6 -cq 28 h264_nvenc_p6_cq28.mp4
+
+-i ?input? -c:v h264_nvenc -preset p7 -cq 17 h264_nvenc_p7_cq17.mp4
+-i ?input? -c:v h264_nvenc -preset p7 -cq 18 h264_nvenc_p7_cq18.mp4
+-i ?input? -c:v h264_nvenc -preset p7 -cq 23 h264_nvenc_p7_cq23.mp4
+-i ?input? -c:v h264_nvenc -preset p7 -cq 28 h264_nvenc_p7_cq28.mp4
+
+-i ?input? -c:v h264_nvenc -preset p2 -cq 17 h264_nvenc_p2_cq17.mp4
+-i ?input? -c:v h264_nvenc -preset p2 -cq 18 h264_nvenc_p2_cq18.mp4
+-i ?input? -c:v h264_nvenc -preset p2 -cq 23 h264_nvenc_p2_cq23.mp4
+-i ?input? -c:v h264_nvenc -preset p2 -cq 28 h264_nvenc_p2_cq28.mp4
+
+
+# libx264
+-i ?input? -c:v libx264 libx264_default.mp4
+
+-i ?input? -c:v libx264 -preset medium -crf 17 libx264_medium_crf17.mp4
+-i ?input? -c:v libx264 -preset medium -crf 18 libx264_medium_crf18.mp4
+-i ?input? -c:v libx264 -preset medium -crf 23 libx264_medium_crf23.mp4
+-i ?input? -c:v libx264 -preset medium -crf 28 libx264_medium_crf28.mp4
+
+-i ?input? -c:v libx264 -preset slower -crf 17 libx264_slower_crf17.mp4
+-i ?input? -c:v libx264 -preset slower -crf 18 libx264_slower_crf18.mp4
+-i ?input? -c:v libx264 -preset slower -crf 23 libx264_slower_crf23.mp4
+-i ?input? -c:v libx264 -preset slower -crf 28 libx264_slower_crf28.mp4
+
+-i ?input? -c:v libx264 -preset faster -crf 17 libx264_faster_crf17.mp4
+-i ?input? -c:v libx264 -preset faster -crf 18 libx264_faster_crf18.mp4
+-i ?input? -c:v libx264 -preset faster -crf 23 libx264_faster_crf23.mp4
+-i ?input? -c:v libx264 -preset faster -crf 28 libx264_faster_crf28.mp4
+
+-i ?input? -c:v libx264 -preset superfast -crf 17 libx264_superfast_crf17.mp4
+-i ?input? -c:v libx264 -preset superfast -crf 18 libx264_superfast_crf18.mp4
+-i ?input? -c:v libx264 -preset superfast -crf 23 libx264_superfast_crf23.mp4
+-i ?input? -c:v libx264 -preset superfast -crf 28 libx264_superfast_crf28.mp4
+
+-i ?input? -c:v libx264 -preset veryslow -crf 17 libx264_veryslow_crf17.mp4
+-i ?input? -c:v libx264 -preset veryslow -crf 18 libx264_veryslow_crf18.mp4
+-i ?input? -c:v libx264 -preset veryslow -crf 23 libx264_veryslow_crf23.mp4
+-i ?input? -c:v libx264 -preset veryslow -crf 28 libx264_veryslow_crf28.mp4
+
+-i ?input? -c:v libx264 -preset veryslow  -qp 0 libx264_veryslow_lossless.mp4
+-i ?input? -c:v libx264 -preset ultrafast -qp 0 libx264_ultrafast_lossless.mp4
+
+
+# h264_qsv
+-hwaccel qsv -i ?input? -c:v h264_qsv h264_qsv_default.mp4
+
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset faster -global_quality 17 h264_qsv_faster_17.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset faster -global_quality 18 h264_qsv_faster_18.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset faster -global_quality 23 h264_qsv_faster_23.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset faster -global_quality 28 h264_qsv_faster_28.mp4
+
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset medium -global_quality 17 h264_qsv_medium_17.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset medium -global_quality 18 h264_qsv_medium_18.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset medium -global_quality 23 h264_qsv_medium_23.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset medium -global_quality 28 h264_qsv_medium_28.mp4
+
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset slower -global_quality 17 h264_qsv_slower_17.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset slower -global_quality 18 h264_qsv_slower_18.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset slower -global_quality 23 h264_qsv_slower_23.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset slower -global_quality 28 h264_qsv_slower_28.mp4
+
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset veryslow -global_quality 17 h264_qsv_veryslow_17.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset veryslow -global_quality 18 h264_qsv_veryslow_18.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset veryslow -global_quality 23 h264_qsv_veryslow_23.mp4
+-hwaccel qsv -i ?input? -c:v h264_qsv -preset veryslow -global_quality 28 h264_qsv_veryslow_28.mp4
+
+###
